@@ -7,18 +7,21 @@
 		"prepare": "npm run build"
 	},
 	"dependencies": {
-		"@types/node": "^11.13.4",
+		"@types/node": "^11.13.5",
 		"copy-webpack-plugin": "^5.0.2",
 		"css-loader": "^2.1.1",
 		"dtk": "^1.0.3",
 		"google-fonts-plugin": "^4.0.2",
+		"html-webpack-inline-source-plugin": "0.0.10",
 		"html-webpack-plugin": "^3.2.0",
 		"mini-css-extract-plugin": "^0.6.0",
 		"node-sass": "^4.11.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.1",
 		"sanitize.css": "^8.0.0",
 		"sass-loader": "^7.1.0",
 		"ts-loader": "^5.3.3",
 		"typescript": "^3.4.3",
+		"ujsx": "^1.2.1",
 		"webpack": "^4.30.0",
 		"webpack-cli": "^3.3.0"
 	}

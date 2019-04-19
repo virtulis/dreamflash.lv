@@ -1,12 +1,14 @@
-const MiniCss = require('mini-css-extract-plugin');
+const MiniCssExtract = require('mini-css-extract-plugin');
 const GoogleFontsPlugin = require('google-fonts-plugin');
 const Html = require('html-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 module.exports = (env = {}, argv = {}) => ({
 	name: 'dreamflash',
 	entry: {
-		dreamflash: './src/dreamflash.ts',
+		dreamflash: './src/client.ts',
 	},
 	output: {
 		path: process.cwd() + '/dist/'
@@ -21,7 +23,7 @@ module.exports = (env = {}, argv = {}) => ({
 			{
 				test: /\.scss$/,
 				use: [
-					MiniCss.loader,
+					MiniCssExtract.loader,
 					'css-loader',
 					'sass-loader',
 				]
@@ -41,16 +43,23 @@ module.exports = (env = {}, argv = {}) => ({
 				},
 				{
 					family: 'Source Sans Pro',
-					variants: ['200', '400i', '400italic', '600' ],
+					variants: ['200', '400i', '400italic', '600'],
 					subsets: ['cyrillic', 'latin-ext'],
 				}
 			],
 			formats: ['woff2'],
 		}),
 		new Html({
-			template: 'src/dreamflash.html',
+			template: 'src/html.tsx',
+			inlineSource: '.(js|css)$',
 		}),
-		new MiniCss(),
+		new MiniCssExtract(),
+		new OptimizeCssAssetsPlugin({
+			cssProcessorPluginOptions: {
+				preset: ['default', { discardComments: { removeAll: true } }],
+			},
+		}),
+		new HtmlWebpackInlineSourcePlugin(),
 		new Copy([
 			{ from: 'src/img/', to: 'img/' },
 		]),

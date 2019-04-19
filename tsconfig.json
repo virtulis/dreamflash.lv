@@ -5,9 +5,12 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"jsx": "react",
+		"jsxFactory": "ujsx"
 	},
 	"include": [
-		"./src/**/*.ts"
+		"./src/**/*.ts",
+		"./src/**/*.tsx"
 	]
 }
