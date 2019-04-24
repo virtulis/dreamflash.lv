@@ -16,7 +16,7 @@ export const contentData = {
 	info: {
 		lv: [
 			<p>
-				Jau 11 gadus katru pavasari mēs soļojam apkārt Vecrīgai un pūšam ziepju burbuļus.
+				Jau 12 gadus katru pavasari mēs soļojam apkārt Vecrīgai un pūšam ziepju burbuļus.
 				Bez īpašiem mērķiem vai idejām, vienkārši tāpēc, ka tas priecē mūs un apkārtējos.
 			</p>,
 			<p>
@@ -25,14 +25,22 @@ export const contentData = {
 		],
 		ru: [
 			<p>
-				Уже 11 лет каждую весну мы шагаем по Старой Риге и дуем мыльные пузыри.
+				Уже 12 лет каждую весну мы шагаем по Старой Риге и дуем мыльные пузыри.
 				Без особых целей или идей, просто потому что это радует нас и окружающих.
 			</p>,
 			<p>
 				Чтобы к нам присоединиться не нужно спрашивать разрешения. Просто приходи на Бастионку и вместе пойдем пузырить до Домской площади.
 			</p>
 		],
-		en: [],
+		en: [
+			<p>
+				Every spring for the last 12 years we march around Old Riga and blow soap bubbles.
+				We do it without specific purposes or ideas, just because it brings joy to us and everyone around.
+			</p>,
+			<p>
+				No need to ask for permission to join us. Just come to Bastekalns and we'll bubble our way to Doma laukums together.
+			</p>
+		],
 	},
 	do: {
 		lv: [
@@ -40,8 +48,16 @@ export const contentData = {
 			<li>ģērbies krāšņi</li>,
 			<li>sauc draugus un radus</li>,
 		],
-		ru: [],
-		en: [],
+		ru: [
+			<li>заранее обзаведись пузырями</li>,
+			<li>одевайся ярко</li>,
+			<li>зови друзей и родных</li>
+		],
+		en: [
+			<li>get bubble solution in advance</li>,
+			<li>dress bright</li>,
+			<li>invite your friends and family</li>
+		],
 	},
 	dont: {
 		lv: [
@@ -49,8 +65,16 @@ export const contentData = {
 			<li>uzvedies piedienīgi</li>,
 			<li>politiku atstāj mājās</li>,
 		],
-		ru: [],
-		en: [],
+		ru: [
+			<li>не мусорь</li>,
+			<li>веди себя прилично</li>,
+			<li>оставь политику дома</li>,
+		],
+		en: [
+			<li>don't litter</li>,
+			<li>behave well</li>,
+			<li>leave politics at home</li>
+		],
 	}
 };
 
