@@ -35,7 +35,7 @@ export default function generateHTML() {
 					lang => <a href={'#' + lang} className="header__nav-button header__nav-button--language">{lang.toUpperCase()}</a>
 				)}
 				<div className="header__nav-separator" />
-				<a className="header__nav-button header__nav-button--fb" href="https://www.facebook.com/DreamflashRiga/">
+				<a className="header__nav-button header__nav-button--fb" href="https://www.facebook.com/events/317488255590991">
 					{fbIcon}
 				</a>
 			</div>
