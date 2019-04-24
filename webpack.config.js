@@ -8,8 +8,9 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 module.exports = (env = {}, argv = {}) => ({
 	name: 'dreamflash',
 	entry: {
-		dreamflash: './src/client.ts',
+		dreamflash: './client.ts',
 	},
+	context: process.cwd() + '/src/',
 	output: {
 		path: process.cwd() + '/dist/'
 	},
@@ -29,9 +30,19 @@ module.exports = (env = {}, argv = {}) => ({
 				]
 			},
 			{
-				test: /\.svg/,
+				test: /\.svg$/,
 				use: {
 					loader: 'svg-url-loader',
+				}
+			},
+			{
+				test: /\.jpg$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: '[path][name].[ext]',
+						emitFile: false,
+					},
 				}
 			},
 		]
@@ -56,7 +67,7 @@ module.exports = (env = {}, argv = {}) => ({
 			formats: ['woff2'],
 		}),
 		new Html({
-			template: 'src/html.tsx',
+			template: 'html.tsx',
 			inlineSource: '.(js|css)$',
 		}),
 		new MiniCssExtract(),
@@ -67,7 +78,7 @@ module.exports = (env = {}, argv = {}) => ({
 		}),
 		new HtmlWebpackInlineSourcePlugin(),
 		new Copy([
-			{ from: 'src/img/', to: 'img/' },
+			{ from: 'img', to: 'img' },
 		]),
 	],
 	devtool: argv.mode === 'production' ? 'source-map' : 'eval-source-map',
