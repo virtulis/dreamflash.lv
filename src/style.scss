@@ -24,14 +24,11 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 	font-size: 24px;
+	padding: 60px 0 40px 0;
 
 	@include narrow {
 		font-size: 20px;
 	}
-}
-
-.page {
-	margin: 60px 0 40px 0;
 }
 
 a {

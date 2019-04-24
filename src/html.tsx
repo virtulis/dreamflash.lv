@@ -27,64 +27,62 @@ export default function generateHTML() {
 	</head>
 
 	<body>
-		<div className="page">
 
-			<header className="header">
-				<h1>{title}</h1>
-				<div className="header__nav">
-					{languages.map(
-						lang => <a href={'#' + lang} className="header__nav-button header__nav-button--language">{lang.toUpperCase()}</a>
-					)}
-					<div className="header__nav-separator" />
-					<a className="header__nav-button header__nav-button--fb" href="https://www.facebook.com/DreamflashRiga/">
-						{fbIcon}
-					</a>
-				</div>
-			</header>
+		<header className="header">
+			<h1>{title}</h1>
+			<div className="header__nav">
+				{languages.map(
+					lang => <a href={'#' + lang} className="header__nav-button header__nav-button--language">{lang.toUpperCase()}</a>
+				)}
+				<div className="header__nav-separator" />
+				<a className="header__nav-button header__nav-button--fb" href="https://www.facebook.com/DreamflashRiga/">
+					{fbIcon}
+				</a>
+			</div>
+		</header>
 
-			<main>
+		<main>
 
-				{forEachLang(c => <h2 className="essentials">
-					<span>{c.date}</span>{' '}
-					<span>14:14</span>{' '}
-					<span>Bastejkalns</span>
-				</h2>)}
+			{forEachLang(c => <h2 className="essentials">
+				<span>{c.date}</span>{' '}
+				<span>14:14</span>{' '}
+				<span>Bastejkalns</span>
+			</h2>)}
 
-				{forEachLang(c => <section className="info">{c.info}</section>)}
+			{forEachLang(c => <section className="info">{c.info}</section>)}
 
-				<section className="photos">
-					{photos.map(pid => <a
-						className="photos__thumb"
-						href={`https://www.facebook.com/${pid}`}
-						style={{ backgroundImage: `url(./img/thumbs/${pid}.500.jpg)` }}
-						target="_blank"
-					/>)}
-				</section>
+			<section className="photos">
+				{photos.map(pid => <a
+					className="photos__thumb"
+					href={`https://www.facebook.com/${pid}`}
+					style={{ backgroundImage: `url(./img/thumbs/${pid}.500.jpg)` }}
+					target="_blank"
+				/>)}
+			</section>
 
-				{forEachLang(c => <section className="howto">
-					<ul className="howto__do">{c.do}</ul>
-					<ul className="howto__dont">{c.dont}</ul>
-				</section>)}
+			{forEachLang(c => <section className="howto">
+				<ul className="howto__do">{c.do}</ul>
+				<ul className="howto__dont">{c.dont}</ul>
+			</section>)}
 
-				<section className="map">
-					{mapIframe}
-				</section>
+			<section className="map">
+				{mapIframe}
+			</section>
 
-			</main>
+		</main>
 
-			<footer className="footer">
-				<a href="mailto:riga@dreamflash.lv">riga@dreamflash.lv</a>
-				<div className="footer__copy">
-					&copy; 2008-{year}
-					<div className="footer__dude footer__dude--left">{secretDude}</div>
-					<div className="footer__dude footer__dude--right">{dudeRef}</div>
-				</div>
-				<div className="footer__attrib">
-					Icons by <a href="https://fontawesome.com/">FontAwesome</a>.
-				</div>
-			</footer>
+		<footer className="footer">
+			<a href="mailto:riga@dreamflash.lv">riga@dreamflash.lv</a>
+			<div className="footer__copy">
+				&copy; 2008-{year}
+				<div className="footer__dude footer__dude--left">{secretDude}</div>
+				<div className="footer__dude footer__dude--right">{dudeRef}</div>
+			</div>
+			<div className="footer__attrib">
+				Icons by <a href="https://fontawesome.com/">FontAwesome</a>.
+			</div>
+		</footer>
 
-		</div>
 	</body>
 
 	</html>);
