@@ -1,28 +1,39 @@
 import { ujsx, ujsxToHTML } from 'ujsx';
-import { forEachLang, languages } from './content';
-
-const fbIcon = <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square"
-					className="svg-inline--fa fa-facebook-square fa-w-14" role="img"
-					xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-	<path fill="currentColor"
-		  d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"/>
-</svg>;
+import { forEachLang, languages } from './i18n';
+import { dudeRef, fbIcon, secretDude } from './svg/svg';
+import { mapIframe } from './map';
+import { metaDescription, photos, siteUrl, title, year } from './content';
 
 export default function generateHTML() {
-	return '<!DOCTYPE html>\n' + ujsxToHTML(<html lang="en">
+	return '<!DOCTYPE html>\n' + ujsxToHTML(<html>
+
 	<head>
+
 		<meta charSet="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>Dreamflash Rīga 2019</title>
+
+		<title>{title}</title>
+		<meta name="description" content={metaDescription} />
+		<meta name="keywords" content="dreamflash, дримфлеш, парад мыльных пузырей, ziepju burbuļu parāde, ziepju burbuļu gājiens" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={siteUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={metaDescription} />
+		<meta property="og:image" content={`${siteUrl}img/bubbles.jpg`} />
+
 		<link href="./woff2.css" rel="stylesheet"/>
+
 	</head>
+
 	<body>
 		<div className="page">
+
 			<header className="header">
-				<h1>Dreamflash Rīga 2019</h1>
+				<h1>{title}</h1>
 				<div className="header__nav">
 					{languages.map(
-						lang => <a href={'#' + lang} className="header__nav-button">{lang.toUpperCase()}</a>
+						lang => <a href={'#' + lang} className="header__nav-button header__nav-button--language">{lang.toUpperCase()}</a>
 					)}
 					<div className="header__nav-separator" />
 					<a className="header__nav-button header__nav-button--fb" href="https://www.facebook.com/DreamflashRiga/">
@@ -30,17 +41,51 @@ export default function generateHTML() {
 					</a>
 				</div>
 			</header>
+
 			<main>
-				{forEachLang(c => <section className="essentials">
-					<div>
-						<h3>{c.when}</h3>
-					</div>
+
+				{forEachLang(c => <h2 className="essentials">
+					<span>{c.date}</span>{' '}
+					<span>14:14</span>{' '}
+					<span>Bastejkalns</span>
+				</h2>)}
+
+				{forEachLang(c => <section className="info">{c.info}</section>)}
+
+				<section className="photos">
+					{photos.map(pid => <a
+						className="photos__thumb"
+						href={`https://www.facebook.com/${pid}`}
+						style={{ backgroundImage: `url(./img/thumbs/${pid}.500.jpg)` }}
+						target="_blank"
+					/>)}
+				</section>
+
+				{forEachLang(c => <section className="howto">
+					<ul className="howto__do">{c.do}</ul>
+					<ul className="howto__dont">{c.dont}</ul>
 				</section>)}
+
+				<section className="map">
+					{mapIframe}
+				</section>
+
 			</main>
+
 			<footer className="footer">
 				<a href="mailto:riga@dreamflash.lv">riga@dreamflash.lv</a>
+				<div className="footer__copy">
+					&copy; 2008-{year}
+					<div className="footer__dude footer__dude--left">{secretDude}</div>
+					<div className="footer__dude footer__dude--right">{dudeRef}</div>
+				</div>
+				<div className="footer__attrib">
+					Icons by <a href="https://fontawesome.com/">FontAwesome</a>.
+				</div>
 			</footer>
+
 		</div>
 	</body>
+
 	</html>);
 }

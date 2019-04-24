@@ -27,7 +27,13 @@ module.exports = (env = {}, argv = {}) => ({
 					'css-loader',
 					'sass-loader',
 				]
-			}
+			},
+			{
+				test: /\.svg/,
+				use: {
+					loader: 'svg-url-loader',
+				}
+			},
 		]
 	},
 	resolve: {
@@ -43,7 +49,7 @@ module.exports = (env = {}, argv = {}) => ({
 				},
 				{
 					family: 'Source Sans Pro',
-					variants: ['200', '400i', '400italic', '600'],
+					variants: ['200', '200italic', '400'],
 					subsets: ['cyrillic', 'latin-ext'],
 				}
 			],
