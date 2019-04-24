@@ -24,7 +24,9 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 	font-size: 24px;
-	padding: 60px 0 40px 0;
+	padding: 60px 0 40vw 0;
+	background: url('./img/crowd.jpg') no-repeat bottom center;
+	background-size: 100vw;
 
 	@include narrow {
 		font-size: 20px;
