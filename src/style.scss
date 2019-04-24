@@ -31,7 +31,7 @@ body {
 }
 
 .page {
-	margin: 7vh 0 4vh 0;
+	margin: 60px 0 40px 0;
 }
 
 a {
@@ -43,7 +43,7 @@ a {
 
 h1 {
 	font-family: Caveat, sans-serif;
-	font-size: 4vw;
+	font-size: 2em;
 	margin-bottom: 16px;
 
 	@include narrow {
@@ -116,11 +116,11 @@ h1 {
 }
 
 .essentials {
-	@include page-section(2vh);
+	@include page-section(20px);
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	font-size: 36px;
+	font-size: 40px;
 	font-weight: 400;
 
 	span {
@@ -130,7 +130,7 @@ h1 {
 }
 
 .info {
-	@include page-section(4vh);
+	@include page-section(40px);
 	line-height: 1.3em;
 }
 
@@ -148,8 +148,8 @@ h1 {
 		height: (100vw / $photo-count);
 
 		@include narrow {
-			flex: 0 1 50vw;
-			height: 50vw;
+			flex: 1 1 33vw;
+			height: 33vw;
 		}
 	}
 
@@ -159,7 +159,7 @@ h1 {
 }
 
 .howto {
-	@include page-section(2vh);
+	@include page-section(20px);
 	display: flex;
 	justify-content: stretch;
 	flex-wrap: wrap;
@@ -167,7 +167,7 @@ h1 {
 	ul {
 		flex: 300px 1 0;
 		list-style-type: none;
-		margin: 2vh 0;
+		margin: 20px 0;
 		padding: 0;
 
 		@include narrow {
@@ -193,7 +193,7 @@ h1 {
 }
 
 .map {
-	margin: 4.5vh 0;
+	margin: 45px 0;
 	position: relative;
 	overflow: hidden;
 
