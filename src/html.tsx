@@ -20,7 +20,7 @@ export default function generateHTML() {
 		<meta property="og:url" content={siteUrl} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={metaDescription} />
-		<meta property="og:image" content={`${siteUrl}img/bubbles.jpg`} />
+		<meta property="og:image" content={`${siteUrl}img/og-cover.jpg`} />
 
 		<link href="./woff2.css" rel="stylesheet"/>
 
