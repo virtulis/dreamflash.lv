@@ -56,7 +56,7 @@ module.exports = (env = {}, argv = {}) => ({
 				{
 					family: 'Caveat',
 					variants: ['700'],
-					subsets: ['cyrillic', 'latin-ext'],
+					subsets: ['latin-ext'],
 				},
 				{
 					family: 'Source Sans Pro',

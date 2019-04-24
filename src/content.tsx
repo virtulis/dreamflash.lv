@@ -20,12 +20,12 @@ export const contentData = {
 				Bez īpašiem mērķiem vai idejām, vienkārši tāpēc, ka tas priecē mūs un apkārtējos.
 			</p>,
 			<p>
-				Lai mums pievienotos nav jāprasa atļauja, vienkārši nāc uz Bastejkalnu un kopā iesim burbuļot līdz Doma laukumam.
+				Lai mums pievienotos, nav jāprasa atļauja, vienkārši nāc uz Bastejkalnu un kopā iesim burbuļot līdz Doma laukumam.
 			</p>
 		],
 		ru: [
 			<p>
-				Уже 12 лет каждую весну мы шагаем по Старой Риге и дуем мыльные пузыри.
+				Уже 12 лет каждую весну мы шагаем по Старой Риге и пускаем мыльные пузыри.
 				Без особых целей или идей, просто потому что это радует нас и окружающих.
 			</p>,
 			<p>
