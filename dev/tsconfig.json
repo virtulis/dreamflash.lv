@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "esnext",
+		"sourceMap": true,
+		"strict": true,
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true
+	},
+	"include": [
+		"./**/*.ts"
+	]
+}
