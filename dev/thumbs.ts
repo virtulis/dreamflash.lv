@@ -7,7 +7,7 @@ const thumbsDir = resolve(__dirname, '../src/img/thumbs');
 
 if (!existsSync(thumbsDir)) mkdirSync(thumbsDir);
 
-const thumb = (fn: string, size: number) => new Promise((res, rej) => gm(`${photosDir}/${fn}`)
+const thumb = (fn: string, size: number) => new Promise<void>((res, rej) => gm(`${photosDir}/${fn}`)
 	.resize(size, size, '^')
 	.quality(97)
 	.write(`${thumbsDir}/${parse(fn).name}.${size}.jpg`, err => err ? rej(err) : res())

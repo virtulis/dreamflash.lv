@@ -22,8 +22,6 @@ export default function generateHTML() {
 		<meta property="og:description" content={metaDescription} />
 		<meta property="og:image" content={`${siteUrl}img/og-cover.jpg`} />
 
-		<link href="./woff2.css" rel="stylesheet"/>
-
 	</head>
 
 	<body>
@@ -44,7 +42,7 @@ export default function generateHTML() {
 		<main>
 
 			{forEachLang(c => <h2 className="essentials">
-				<span>{c.date}</span>{' '}
+				<span className="blur">{c.date}</span>{' '}
 				<span>14:14</span>{' '}
 				<span>Bastejkalns</span>
 			</h2>)}
@@ -55,7 +53,7 @@ export default function generateHTML() {
 				{photos.map(pid => <a
 					className="photos__thumb"
 					href={`https://www.facebook.com/${pid}`}
-					style={{ backgroundImage: `url(./img/thumbs/${pid}.500.jpg)` }}
+					style={{ backgroundImage: `url(/img/thumbs/${pid}.500.jpg)` }}
 					target="_blank"
 				/>)}
 			</section>

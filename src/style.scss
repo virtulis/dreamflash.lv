@@ -1,4 +1,5 @@
 @import "~sanitize.css";
+@import "fonts";
 
 $photo-count: 6;
 
@@ -128,6 +129,10 @@ h1 {
 	}
 }
 
+.blur {
+	filter: blur(10px);
+}
+
 .info {
 	@include page-section(40px);
 	line-height: 1.3em;
@@ -181,6 +186,7 @@ h1 {
 			padding-left: 1.4em;
 			background-size: .9em .9em;
 			background-position: 0 .2em;
+			background-repeat: no-repeat;
 		}
 	}
 	&__do li {

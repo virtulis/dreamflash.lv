@@ -2,16 +2,16 @@ import { ujsx } from 'ujsx';
 
 export const siteUrl = 'https://dreamflash.lv/';
 
-export const year = 2019;
+export const year = 2021;
 
 export const title = `Dreamflash Rīga ${year}`;
 export const metaDescription = '12.05 14:14 Bastejkalns!';
 
 export const contentData = {
 	date: {
-		lv: '12. maijā',
-		ru: '12 мая',
-		en: 'May 12',
+		lv: 'XX. zzzzz',
+		ru: 'XX zzzzz',
+		en: 'Zzzzz XX',
 	},
 	info: {
 		lv: [
