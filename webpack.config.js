@@ -1,7 +1,6 @@
 const MiniCssExtract = require('mini-css-extract-plugin');
 const Html = require('html-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = (env = {}, argv = {}) => ({
 	name: 'dreamflash',
@@ -24,20 +23,9 @@ module.exports = (env = {}, argv = {}) => ({
 				test: /\.scss$/,
 				use: [
 					MiniCssExtract.loader,
-					{
-						loader: 'css-loader',
-						options: {
-							url: url => url.match(/\.svg$/),
-						},
-					},
+					'css-loader',
 					'sass-loader',
 				]
-			},
-			{
-				test: /\.svg$/,
-				use: {
-					loader: 'svg-url-loader',
-				}
 			},
 		]
 	},
